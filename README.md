@@ -17,19 +17,20 @@ Tích hợp SEO tối ưu sẵn
 API RESTful để kết nối với hệ thống khác
 
 Cấu trúc Dự án
+
 mt-framework/
-├── src/
-│   ├── core/              # Các thành phần cốt lõi
-│   ├── modules/           # Các mô-đun chức năng chính
-│   ├── plugins/           # Plugin và phần mở rộng
-│   └── themes/            # Chủ đề giao diện
-├── config/                # Cấu hình ứng dụng
-├── public/                # Thư mục public
-├── db/                    # Cơ sở dữ liệu
-├── tests/                 # Kiểm thử đơn vị
-├── composer.json
-├── package.json
-└── README.md
+src/
+  core/       # Các thành phần cốt lõi
+  modules/    # Các mô-đun chức năng chính
+  plugins/    # Plugin và phần mở rộng
+  themes/     # Chủ đề giao diện
+config/       # Cấu hình ứng dụng
+public/       # Thư mục public
+db/           # Cơ sở dữ liệu
+tests/        # Kiểm thử đơn vị
+composer.json
+package.json
+README.md
 
 Yêu cầu Hệ thống
 
