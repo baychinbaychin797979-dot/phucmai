@@ -1,0 +1,20 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Segoe UI,Roboto,Arial;background:#f4f6f8;color:#222}
+.admin{max-width:1100px;margin:32px auto;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.08)}
+.admin-header{padding:20px 28px;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between}
+.admin-header h1{font-size:18px;color:#2b2b2b}
+.admin-header nav a{margin-left:12px;color:#5b6bff;text-decoration:none}
+.admin-main{display:flex;gap:20px;padding:24px}
+.panel{flex:1;display:none}
+.panel.active{display:block}
+#pages-list{list-style:none;margin-top:12px}
+#pages-list li{padding:10px;border:1px solid #eee;border-radius:6px;margin-bottom:8px}
+.admin-footer{padding:12px 18px;background:#fafafa;border-top:1px solid #eee;text-align:center;color:#888}
+button{background:#5b6bff;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+button:hover{opacity:.95}
+
+/* Editor styles */
+#page-editor label{font-weight:600;color:#333}
+#page-editor input,#page-editor textarea{font-family:inherit}
+#page-editor #btn-save-page{background:#22a06b}
+#page-editor #btn-cancel-edit{background:#aaa;color:#fff}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>CMS Công ty - Admin</title>
+        <link rel="stylesheet" href="/admin/style.css">
+    </head>
+    <body>
+        <div class="admin">
+            <header class="admin-header">
+                <h1>CMS Công ty — Admin Dashboard</h1>
+                <nav>
+                    <a href="#dashboard" id="nav-dashboard">Dashboard</a>
+                    <a href="#pages" id="nav-pages">Pages</a>
+                    <a href="#settings" id="nav-settings">Settings</a>
+                </nav>
+            </header>
+
+            <main class="admin-main" id="app">
+                <section id="dashboard" class="panel active">
+                    <h2>Chào mừng</h2>
+                    <p>Hệ thống CMS nội bộ cho công ty. Dùng thanh điều hướng để
+                        quản lý nội dung.</p>
+                </section>
+
+                <section id="pages" class="panel">
+                    <h2>Pages</h2>
+                    <button id="btn-refresh-pages">Load pages</button>
+                    <ul id="pages-list"></ul>
+                    <div id="page-editor"
+                        style="display:none;margin-top:16px;border-top:1px dashed #eee;padding-top:12px">
+                        <h3 id="editor-title">Edit Page</h3>
+                        <form id="editor-form">
+                            <div>
+                                <label>Title</label><br>
+                                <input type="text" id="page-title"
+                                    style="width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:6px" />
+                            </div>
+                            <div style="margin-top:8px">
+                                <label>Slug</label><br>
+                                <input type="text" id="page-slug"
+                                    style="width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:6px" />
+                            </div>
+                            <div style="margin-top:8px">
+                                <label>Content</label><br>
+                                <textarea id="page-content" rows="6"
+                                    style="width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:6px"></textarea>
+                            </div>
+                            <div style="margin-top:10px;display:flex;gap:8px">
+                                <button id="btn-save-page"
+                                    type="button">Save</button>
+                                <button id="btn-cancel-edit" type="button"
+                                    style="background:#aaa">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section id="settings" class="panel">
+                    <h2>Settings</h2>
+                    <pre id="settings-json"></pre>
+                </section>
+            </main>
+
+            <footer class="admin-footer">© Công ty — CMS nội bộ</footer>
+        </div>
+
+        <script type="module" src="/admin/script.js"></script>
+    </body>
+</html>

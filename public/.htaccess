@@ -1,0 +1,18 @@
+<?php
+/**
+ * Public Entry Point
+ */
+
+// Set base path
+define('BASE_PATH', dirname(__DIR__));
+
+// Check if index.php exists
+$requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+// If requesting a file/directory, serve it directly
+if (file_exists(BASE_PATH . '/public' . $requestUri) && is_file(BASE_PATH . '/public' . $requestUri)) {
+    return false;
+}
+
+// Otherwise, route to the application
+require_once BASE_PATH . '/src/index.php';

@@ -1,0 +1,30 @@
+{
+  "name": "mt-framework",
+  "version": "1.0.0",
+  "description": "Movable Type Framework - A robust PHP-based blogging and content management platform",
+  "keywords": ["blog", "cms", "content-management", "publishing"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.movabletype.com/",
+  "type": "module",
+  "main": "src/index.php",
+  "scripts": {
+    "dev": "php -S localhost:8000 -t public",
+    "build": "npm run lint && npm run test",
+    "lint": "eslint src --ext .js,.ts --fix",
+    "test": "jest",
+    "serve": "php -S localhost:8000 -t public",
+    "install-deps": "composer install",
+    "migrate": "php artisan migrate",
+    "seed": "php artisan db:seed"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "mysql2": "^3.0.0"
+  }
+}

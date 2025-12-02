@@ -1,0 +1,14 @@
+<?php
+/**
+ * PHPUnit Configuration
+ */
+
+return [
+    'testSuite' => 'MovableType Test Suite',
+    'bootstrap' => __DIR__ . '/bootstrap.php',
+    'testDirectory' => __DIR__,
+    'coverage' => [
+        'enabled' => true,
+        'clover' => __DIR__ . '/coverage/clover.xml',
+    ],
+];

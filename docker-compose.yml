@@ -1,0 +1,59 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: mt-framework
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=local
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_USERNAME=movable_user
+      - DB_PASSWORD=password
+      - DB_NAME=movabletype
+    depends_on:
+      - db
+    networks:
+      - mt-network
+
+  db:
+    image: mysql:8.0
+    container_name: mt-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_USER: movable_user
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: movabletype
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - db_data:/var/lib/mysql
+    networks:
+      - mt-network
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: mt-phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root_password
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    networks:
+      - mt-network
+
+volumes:
+  db_data:
+
+networks:
+  mt-network:
+    driver: bridge
